@@ -1,0 +1,213 @@
+/* ヒーロー画像3枚
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+.container {
+    height: 800px;
+    width: 100%;
+    background-image: url(../images/bg-hero1.png),url(../images/bg-hero2.png),url(../images/bg-hero3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll,scroll,fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 100;
+    @media screen and (max-width: 767px) {
+        /* 766px以下に適用されるCSS */
+       height: 300px;
+       background-size: cover;
+       display: flex;
+       align-items: flex-end;
+       background-position: center 23px;
+
+      }
+}
+
+
+
+.head {
+    display: inline-block;
+    padding: 40px 40px 20px 40px;
+    background-color: #fff;  
+    border-radius: 10px;
+    text-align: center;
+    position: relative; 
+    top: 20%;
+    @media screen and (max-width: 767px) {
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+        padding-bottom: 15px;
+
+      }  
+    &__title {
+        & > img {
+            width: 280px;
+            margin: auto;
+        }
+    }
+    & > P {
+        font-weight: 700;
+        line-height: 27px;
+        margin-bottom: 15px;
+        @media screen and (max-width: 767px) {
+            font-size: 13px;
+            line-height: 1.8;
+        
+            } 
+    }
+    &__btn-big {
+        background-color: #2498B3;
+        border-color: #2498B3;
+        border-radius: 5px;
+        padding: 0;
+        margin: 0 auto;
+        & > a {
+            color: #fff;
+            display: inline-block;
+            padding: 24px 37px;
+            margin: 0 auto;
+            @media screen and (max-width: 767px) {
+                padding: 7px 18px;
+                }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .head__title {
+        display: none;
+    }
+}
+/*フォントオーサム＝＝＝＝＝＝＝＝＝＝*/
+.head-body {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    text-align: center;
+
+    
+}
+.icon-wrapper {
+    padding: 20px 0;
+}
+.slogan { 
+    max-width: 1067px;
+    display: flex;
+    justify-content: center;
+    color:#fff;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -263px;
+    z-index: 900;
+    
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        margin-top: 0;
+        }
+    &__item {
+        padding: 20px;
+        &__title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-top: 10px;  
+        }
+        &__body {
+        margin-top: 10px;    
+        line-height: 1.7;
+        font-weight: 700;
+        text-align: left;
+
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        
+        }
+    }
+}
+}
+
+        
+
+.circle1 {
+    width: 230px;
+    height: 230px;
+    border: solid 6px #000;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    z-index: -1;
+}
+
+.circle1:before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f44b";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    font-size: 100px;
+    color:#000;
+    z-index: 1;
+    
+}
+
+.circle2 {
+    width: 230px;
+    height: 230px;
+    border: solid 6px #000;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    z-index: -1;
+}
+
+.circle2:before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f51c";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    font-size: 100px;
+    color:#000;
+    z-index: 1;
+    
+}
+.circle3 {
+    width: 230px;
+    height: 230px;
+    border: solid 6px #000;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    z-index: -1;
+}
+
+.circle3:before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f6cf";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    font-size: 100px;
+    color:#000;
+    z-index: 1;
+    
+}
+
+

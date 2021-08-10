@@ -1,0 +1,315 @@
+/* ヘッダーの左側
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+.header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    @media screen and (max-width: 1200px) {
+        height: 50px;
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        &__link {
+            display: block;
+            align-items: center; //親要素と高さ揃える！？
+        }
+
+        &__img {
+            width: auto;
+            height: 33px;
+            margin: 10px;
+            @media screen and (max-width: 1200px) {
+                height: 30px;
+            }
+        }
+    }
+    &__description {
+        font-size: 14px;
+        color: #131d34;
+        font-weight: 900;
+        margin-left: 15px;
+        & > strong {
+            font-weight: 900;
+            font-size: 18px;
+        }
+        //1280px以下になると非表示
+        @media screen and (max-width: 1280px) {
+            display: none;
+        }
+    }
+}
+
+/*ヘッダーの右側
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ーー*/
+
+.nav {
+    height: 70px;
+    /*justify-contentしたものをさらに右寄せ*/
+    margin: 0 0 0 auto;
+    position: relative;
+    @media screen and (max-width: 1200px) {
+        position: absolute;
+        top: 50px;
+        margin: 0;
+    }
+    &__primary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 70px;
+
+        &__list {
+            /*nav__secondryの親要素にrelative指定*/
+            position: relative;
+            /*line-heightは必要*/
+            line-height: 70px;
+            text-align: center;
+            @media screen and (max-width: 1200px) {
+                line-height: normal;
+                background-color: #fff;
+            }
+            &:not(:last-child) > a:hover {
+                background-color: #c8ecf5;
+                @media screen and (max-width: 1200px) {
+                    background-color: #f3fafb;
+                }
+            }
+            & > a {
+                display: block;
+                padding: 0 15px;
+                text-align: center;
+                @media screen and (max-width: 1200px) {
+                    padding: 10px;
+                    display: block;
+                    width: 100vw;
+                    text-align: left;
+                }
+            }
+            &:last-child {
+                background-color: #2498b3;
+                @media screen and (max-width: 1200px) {
+                    display: none;
+                }
+                & > a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+//サブメニュー
+.nav__secondry {
+    /*親要素のdisplayを解除*/
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    /*折り返さず横に一行*/
+    white-space: nowrap;
+    background-color: #fff;
+    /*はじめは非表示*/
+    visibility: hidden;
+    opacity: 0;
+    //display: none;だと要素自体がなくなる
+    /*アニメーション設定*/
+    transition: all 0.3s;
+
+    &__list {
+        /*リストの高さ調整*/
+        height: 57px;
+        line-height: 57px;
+        background-color: #e9f8fb;
+        text-align: left;
+
+        & > a {
+            display: block;
+            padding: 0 50px 0 15px;
+            height: 100%;
+            font-weight: normal;
+
+            &:hover {
+                background-color: #fff;
+                color: #2498b3;
+                @media screen and (max-width: 1200px) {
+                    background-color: #f3fafb;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+/*liをhoverでulが表示される*/
+.nav__primary__list:hover .nav__secondry {
+    visibility: visible;
+    opacity: 1;
+}
+
+//ハンバーガーボタン
+//「メニューを開閉する」は非表示
+/*.u-visuallyHidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+}*/
+
+.p-hamburger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    -webkit-appearance: none; //ボタンのデフォルトをリセット
+    -moz-appearance: none; //
+    appearance: none; //
+    border: 0; //枠線off
+    outline: none; //クリックしたときに表示される枠線off
+    cursor: pointer;
+    background-color: transparent; //透明
+    visibility: hidden; //非表示
+
+    @media screen and (max-width: 1200px) {
+        visibility: visible;
+        position: fixed;
+        transition: all 0.7s ease-in-out; //✖になるときの速さ
+        &__line {
+            position: absolute;
+            top: 25px;
+            left: 10px;
+            width: 25px;
+            height: 2px;
+            background-color: #2498b3;
+            //-webkit-transition: inherit;
+            //        transition: inherit;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: inherit;
+                //-webkit-transition: inherit;
+                //transition: inherit;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                top: 10px;
+            }
+        }
+    }
+}
+
+//クリックすると×になる動き
+#js-buttonHamburger.active .p-hamburger__line::before {
+    transform: translateY(10px) rotate(-45deg);
+    background-color: #fff;
+}
+#js-buttonHamburger.active.p-hamburger__line {
+    opacity: 0;
+}
+#js-buttonHamburger.active .p-hamburger__line::after {
+    transform: translateY(-10px) rotate(45deg);
+    background-color: #fff;
+}
+
+#js-buttonHamburger.active {
+    background-color: #2498b3;
+    right: 0;
+    transition: 0.7s;
+}
+
+@media screen and (max-width: 1200px) {
+    .nav__primary {
+        flex-direction: column;
+        align-items: flex-start;
+        top: 50px;
+        left: 0;
+        background-color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        &__list {
+            position: relative;
+        }
+        &__list:not(:nth-child(3)) > a::after {
+            content: "";
+            position: absolute;
+            width: 23px;
+            height: 2px;
+            top: 20px;
+            right: 32px;
+            background-color: #000;
+        }
+        &__list:not(:nth-child(3)) > a::before{
+            content: "";
+            position: absolute;
+            width: 23px;
+            height: 1.5px;
+            top: 20px;
+            right: 32px;
+            background-color: #000;
+            transform: rotate(90deg);
+        }
+    }
+
+.nav__primary.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+.nav__secondry {
+    position: static;
+    background-color: #fff;
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+
+    &__list {
+        width: 100%;
+        line-height: normal;
+        height: auto;
+        background-color: #fff;
+        & > a {
+            display: block;
+            color: #000;
+            padding: 10px 10px 10px 25px;
+
+            &:hover {
+                background-color: #f3fafb;
+            }
+        }
+    }
+}
+    .nav__secondry.is-open {
+        display: block;
+    }
+
+    .nav__primary__list:hover a:not(:nth-of-type(3))::before {
+        display: none;
+    }
+
+}

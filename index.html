@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RaiseTech模写サイト</title>
+    <meta name="description" content="RaiseTechのサイト模写">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,,minimum-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a class="header__logo__link">
+                <img class="header__logo__img" src="./images/header-logo.svg" alt="logo">
+            </a>
+            <span class="header__description">最速で<strong>「稼げる」</strong>プロになる<br>エンジニアリングスクール</span>
+        </div>
+
+        <nav class="nav" id="nav">
+            
+                <ul class="nav__primary">
+                    <li class="nav__primary__list"><a href="#">はじめての方へ</a>
+                        <ul class="nav__secondry">
+                            <li class="nav__secondry__list"><a href="#">マンガでわかるRaiseTech</a></li>
+                            <li class="nav__secondry__list"><a href="#">サポート体制</a></li>
+                            <li class="nav__secondry__list"><a href="#">トライアル受講</a></li>
+                            <li class="nav__secondry__list"><a href="#">就職・転職支援制度</a></li>
+                            <li class="nav__secondry__list"><a href="#">ご利用の流れ</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__primary__list">
+                        <a href="#">コース紹介</a>
+                        <ul class="nav__secondry">
+                            <li class="nav__secondry__list"><a href="#">マーケティングコース</a></li>
+                            <li class="nav__secondry__list"><a href="#">デザインコース</a></li>
+                            <li class="nav__secondry__list"><a href="#">Word Press副業コース</a></li>
+                            <li class="nav__secondry__list"><a href="#">AWSフルコース</a></li>
+                            <li class="nav__secondry__list"><a href="#">AWS自動化コース</a></li>
+                            <li class="nav__secondry__list"><a href="#">JAVAフルコース</a></li>
+                            <li class="nav__secondry__list"><a href="#">JAVAフレームワークコース</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__primary__list">
+                        <a href="#">講師紹介</a>
+                    </li>
+
+                    <li class="nav__primary__list">
+                        <a href="#">卒業生の声・実績</a>
+                        <ul class="nav__secondry">
+                            <li class="nav__secondry__list"><a href="#">卒業生の声</a></li>
+                            <li class="nav__secondry__list"><a href="#">転職・案件実績</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__primary__list">
+                        <a href="#">メディア</a>
+                        <ul class="nav__secondry">
+                            <li class="nav__secondry__list"><a href="#">動画一覧</a></li>
+                            <li class="nav__secondry__list"><a href="#">掲載記事一覧</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__primary__list">
+                        <a href="#">サポート</a>
+                        <ul class="nav__secondry">
+                            <li class="nav__secondry__list"><a href="#">よくあるご質問</a></li>
+                            <li class="nav__secondry__list"><a href="#">お問い合わせ</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__primary__list">
+                        <a href="#">受講お申し込み</a>
+                    </li>
+                </ul>
+            
+            <!--🍔-->
+            <button type="button" id="js-buttonHamburger" class="p-hamburger" aria-controls="global-nav"
+                aria-expanded="false">
+                <span class="p-hamburger__line">
+                    <!--<span class="u-visuallyHidden">
+                        メニューを開閉する
+                    </span>-->
+                </span>
+            </button>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="container">
+            <!--mainのbg画像-->
+            <div class="head">
+                <h1 class="head__title">
+                    <img src="./images/header-logo.svg" alt="">
+                </h1>　
+
+                <p>
+                    はじめまして。RaiseTech(レイズテック)は<br>最速で「稼げる」エンジニアになるための、<br>実践的なWebエンジニアリングスクールです
+                </p>
+                <button type="button" class="head__btn-big"><a href="#">マンガでわかるRaiseTech</a></button>
+            </div>
+
+        </div>
+        <div class="head-body">　
+            <!--fontawsomeを３つ並べた範囲-->
+            <div class="slogan icon-wrapper">
+                <div class="slogan__item">
+                    <p class="circle1"></p>
+                    <p class="slogan__item__title">現場主義</p>
+                    <p class="slogan__item__body">
+                        「プログラム」だけでは稼げない！現場で求められる「技術」のみ教えます。
+                    </p>
+                </div>
+
+                <div class="slogan__item">
+                    <p class="circle2"></p>
+                    <p class="slogan__item__title">現役講師</p>
+                    <p class="slogan__item__body">
+                        「今、求められている技術」をリアルタイムに教えてくれる、現役の技術者だけが講師です。
+                    </p>
+                </div>
+
+                <div class="slogan__item">
+                    <p class="circle3"></p>
+                    <p class="slogan__item__title">徹底サポート</p>
+                    <p class="slogan__item__body">
+                        期間中の質疑応答無制限！個別進捗管理！挫折させないサポートを徹底します。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+    <script>
+        //  自作のコードはライブラリ読み込みの後に。
+        alert("読み込みOK！");
+
+
+    </script>
+</body>
+
+</html>
